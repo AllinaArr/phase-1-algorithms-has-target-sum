@@ -1,5 +1,20 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  let left = 0;
+  let right = array.length - 1;
+
+  while (left < right) {
+    // Change <= to <
+    if (array[left] + array[right] === target) {
+      return true;
+    } else if (array[left] + array[right] < target) {
+      left++;
+    } else {
+      right--;
+    }
+  }
+
+  return false;
 }
 
 /* 
